@@ -21,6 +21,7 @@
             .content-container {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 height: 100vh;
                 width: 100vw;
                 padding: 1rem;
@@ -40,14 +41,19 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                max-width: 60rem;
+                border: 1px solid #aaa;
+                border-radius: 1rem;
+                padding: 1rem;
             }
             
             .content p {
                 margin-bottom: 1rem;
+                font-weight: bold;
             }
             
             .random-name {
-                
+                font-weight: bold;
             }
             
             #name-form {
@@ -69,13 +75,16 @@
                 border-radius: 1rem;
                 font-weight: bold;
                 letter-spacing: 1px;
+                height: 100%;
             }
             
             input[type=text] {
                 width: 100%;
                 font-size: 1.2rem;
+                font-weight: bold;
                 padding: 0 .25rem;
                 border: none;
+                border-bottom: 1px solid #aaa;
             }            
             
         </style>
