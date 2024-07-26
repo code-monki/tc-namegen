@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Random Name Generator</title>
+
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .content-container {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                width: 100vw;
+                padding: 1rem;
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            header {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .content {
+                margin-top: 3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .content p {
+                margin-bottom: 1rem;
+            }
+            
+            .random-name {
+                
+            }
+            
+            #name-form {
+                display: flex;
+            }
+            
+            #form-div {
+                width: 100%;
+                background: white;
+                display: flex;
+                justify-content: center;
+            }
+            
+            #rng-btn {
+                padding: .5rem 1rem;
+                background-color: #ccc;
+                margin-right: 2rem;
+                border: 1px solid #aaa;
+                border-radius: 1rem;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            
+            input[type=text] {
+                width: 100%;
+                font-size: 1.2rem;
+                padding: 0 .25rem;
+                border: none;
+            }            
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="content-container">
+            <header>
+                <h1>Random Name Generator</h1>
+                <h3>Courtesy of Timothy Collinson</h3>
+            </header>
+
+            <div class="content">
+                <p>
+                    Click the Generate button to randomly generate a name.
+                </p>
+                
+                <form id="name-form">
+                    <div id="form-div">
+                        <input type="button" id="rng-btn" value="Generate">
+                        <input type="text" id="random_name" readonly>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+    <script>
+        const givenNameList = [
+            "Alman", "Nur", "William", "Rees", "Dooryodan", "Sion",
+            "Delcio", "Affeed", "Saffron", "Virhuse", "Charul", "Showkat",
+            "Spuddit", "Jaffa", "Vency", "Abu", "Dilmon", "Saki",
+            "Yan", "Sebin", "Jide", "Ganapang", "Aurelia", "Max",
+            "Elizaveta", "Lartsen", "Carolingan", "Loyd", "Deem", "Kizita",
+            "Kartik", "Periyasamy", "Stella", "Pauli", "Chinwa", "Skylar"
+        ]
+
+        const surnameList = [
+            "Alkar", "Horridge", "Busaly", "Pestaille", "Otafih", "Kolek",
+            "Phook", "Tomo", "Twells", "Dubmore", "Charul", "Ferhan",
+            "Gosan", "Kadmium", "Vangra", "Waqa", "Oo", "Unniki",
+            "Lewis", "Captain", "Cebula", "Bazuya", "Mead", "Cattermole",
+            "Wrightman", "Noikovitz", "Krusiata", "Hodson", "Tapper", "Pena",
+            "Fusae", "Yavari", "Pwint", "Yebar", "Monkcom", "Toth"
+        ]
+
+        const generate_name = () => {
+            givenName = givenNameList[Math.floor(Math.random() * givenNameList.length)];
+            surName = surnameList[Math.floor(Math.random() * surnameList.length)];
+
+            console.log(`${givenName} ${surName}`);
+            document.getElementById('random_name').value = `${givenName} ${surName}`;
+        }
+
+        const btn = document.getElementById('rng-btn');
+        btn.addEventListener("click", generate_name);
+    </script>
+
+</html>
